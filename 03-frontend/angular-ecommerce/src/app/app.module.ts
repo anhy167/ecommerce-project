@@ -4,8 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProdductService } from './services/prodduct.service';
+import { ProductService } from './services/product.service';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 
 const routes: Routes = [
   {path: 'category/:id', component: ProductListComponent},
@@ -19,14 +20,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductCategoryMenuComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule
   ],
-  providers: [ProdductService],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

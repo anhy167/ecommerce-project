@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/common/product';
-import { ProdductService } from 'src/app/services/prodduct.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'product-list',
@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
   currentCategoryId: number = 1;
 
   constructor(
-    private productService: ProdductService,
+    private productService: ProductService,
     private route: ActivatedRoute
   ) {}
 
