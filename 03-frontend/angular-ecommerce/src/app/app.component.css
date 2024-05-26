@@ -1,0 +1,11 @@
+body a:active, body a:focus, body a:hover{
+    text-decoration:none !important;
+    outline:0 !important;
+}
+
+body a, body a:hover{
+    -webkit-transition:all .3s ease !important;
+    -o-transition:all .3s ease !important;
+    -moz-transition:all .3s ease !important;
+    transition:all .3s ease !important;
+}

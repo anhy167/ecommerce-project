@@ -84,19 +84,22 @@ h6{
 }
 
 a{
-    display:inline-block
+    display:block
 }
 
-a:active,a:focus,a:hover{
-    text-decoration:none;
-    outline:0
+a {
+    text-decoration: none;
 }
 
-a,a:hover{
+a:active, a:focus, a:hover{
+    outline:2
+}
+
+a, a:hover{
     -webkit-transition:all .3s ease;
     -o-transition:all .3s ease;
     -moz-transition:all .3s ease;
-    transition:all .3s ease
+    transition:all .3s ease;
 }
 
 /*Layout Css*/
@@ -196,11 +199,11 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
 
 .arrows i{
     font-size:30px;
-    padding:4px 4px
+    padding:4px 4px;
 }
 
 section{
-    position:relative
+    position:relative;
 }
 
 .section-content{
@@ -977,7 +980,7 @@ footer ul li{
         text-align:center
     }
     .product-box{
-        text-align:centerg
+        text-align:center
     }
     .page-container{
         position:relative;
