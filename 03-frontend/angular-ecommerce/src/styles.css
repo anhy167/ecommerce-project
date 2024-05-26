@@ -92,7 +92,8 @@ a {
 }
 
 a:active, a:focus, a:hover{
-    outline:2
+    text-decoration: underline;
+    outline:0
 }
 
 a, a:hover{
