@@ -31,7 +31,7 @@ public class CheckoutServiceImpl implements CheckoutService{
         Order order = purchase.getOrder();
 
         // generate tracking number
-        String orderTrackingNumber = generateOrderTrackingnumber();
+        String orderTrackingNumber = generateOrderTrackingNumber();
         order.setOrderTrackingNumber(orderTrackingNumber);
 
         // populate order with orderItems
@@ -44,6 +44,16 @@ public class CheckoutServiceImpl implements CheckoutService{
 
         // populate customer with order
         Customer customer = purchase.getCustomer();
+
+        // check if this is an existing customer
+        String theEmail = customer.getEmail();
+        Customer customerDB = customerRepository.findByEmail(theEmail);
+
+        if (customerDB != null) {
+            // we found them ... let's assign them correctly
+            customer = customerDB;
+        }
+
         customer.add(order);
 
         // save to the database
@@ -53,7 +63,7 @@ public class CheckoutServiceImpl implements CheckoutService{
         return new PurchaseResponse(orderTrackingNumber);
     }
 
-    private String generateOrderTrackingnumber() {
+    private String generateOrderTrackingNumber() {
 
         // generate a random UUID number (UUID version-4)
         return UUID.randomUUID().toString();
